@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Luckiest+Guy&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <h1>Jogo da Velha</h1>
+    <div class="container">
+        <div class="game">
+            <div class="game-options">
+                <h2>Escolha uma opção de jogo</h2>
+                <div class="option-buttons">
+                    <button id="opt-1">Humano vs Humano</button>
+                    <button id="opt-2">Humano vs CPU</button>
+                    <button id="opt-3">CPU vs Humano</button>
+                </div>
+            </div>
+            <div class="board">
+                <div id="result"></div>
+                <div class="row">
+                    <input type="button" value="-" class="box">
+                    <input type="button" value="-" class="box">
+                    <input type="button" value="-" class="box">
+                </div>
+                <div class="row">
+                    <input type="button" value="-" class="box">
+                    <input type="button" value="-" class="box">
+                    <input type="button" value="-" class="box">
+                </div>
+                <div class="row">
+                    <input type="button" value="-" class="box">
+                    <input type="button" value="-" class="box">
+                    <input type="button" value="-" class="box">
+                </div>
+            </div>
+            <button id="restart">Reiniciar</button>
+        </div>
+        
+        <div class="list">
+            <p>Histórico de Partidas</p>
+            <table id="info">
+                <tr>
+                    <th>Horário</th>
+                    <th>Modo de Jogo</th>
+                    <th>Vencedor</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="scripts/game.js"></script>
+</body>
+</html>

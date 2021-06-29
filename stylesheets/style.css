@@ -1,0 +1,117 @@
+body {
+    background-color: #e0e0e0;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.25rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 1.875rem;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-options h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.938rem;
+}
+
+.option-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#opt-1, #opt-2, #opt-3 {
+    border: none;
+    outline:none;
+    width: 8.125rem;
+    height: 3.125rem;
+    margin: 0.625rem;
+    padding: 0.625rem;
+    border-radius: 32px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    background:#9329D9;
+    color: #fafafa;
+    transition: all 0.3s ease-in-out;
+}
+
+#opt-1:hover, #opt-2:hover, #opt-3:hover {
+    transform: scale(0.96);
+    background:#640c9e;
+}
+
+.row {
+    display: flex;
+}
+
+.box {
+    border: none;
+    outline:none;
+    width: 6.25rem;
+    height: 6.25rem;
+    margin: 0.188rem;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #fafafa;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 6.25rem;
+    color: #fafafa;
+}
+
+#restart {
+    border: none;
+    outline:none;
+    width: 6.25rem;
+    height: 3.125rem;
+    margin: 0.625rem;
+    border-radius: 32px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    background:#9329D9;
+    color: #fafafa;
+    transition: all 0.3s ease-in-out;
+}
+
+#reiniciar:hover {
+    transform: scale(0.96);
+    background:#640c9e;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Luckiest Guy', cursive;
+    border-collapse: collapse;
+    width: 30%;
+}
+
+.list p {
+    font-size: 1.5rem;
+    padding: 0.938rem;
+    text-align: center;
+}
+
+.list th, td {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+}
