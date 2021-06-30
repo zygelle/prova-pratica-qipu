@@ -15,9 +15,10 @@ btn_opt_1.addEventListener("click", game1);
 function game1() {
 	game_mode = "Humano vs Humano";
 	console.log(game_mode);
+	restart();
 	for(let i=0; i < box.length; i++){
 		box[i].addEventListener("click", (event) => {
-			if((event.target.value == "-") && (winner == "-")){
+			/* if((event.target.value == "-") && (winner == "-")){
 				event.target.value = player;
 				event.target.style.color = "#333";
 
@@ -29,7 +30,8 @@ function game1() {
 				}else{
 					player = "X";
 				}
-			}
+			} */
+			completeGrid(event);
 		});
 	}
 }
@@ -39,16 +41,18 @@ btn_opt_2.addEventListener("click", game2);
 function game2() {
 	game_mode = "Humano vs CPU";
 	console.log(game_mode);
+	restart();
 	for(let i=0; i < box.length; i++){
 		box[i].addEventListener("click", (event) => {
-			if((event.target.value == "-") && (winner == "-")){
-				event.target.value = player;
+			/* if((event.target.value == "-") && (winner == "-")){
+				event.target.value = "O";
 				event.target.style.color = "#333";
 				bot();
 				winner = victory();
 				completeListOfMatches();
 				console.log(winner);
-			}
+			} */
+			completeGrid(event);
 		});
 	}
 }
@@ -57,19 +61,58 @@ btn_opt_3.addEventListener("click", game3);
 
 function game3() {
 	game_mode = "CPU vs Humano";
-	player = "X";
 	console.log(game_mode);
+	restart();
 	for(let i=0; i < box.length; i++){
 		box[i].addEventListener("click", (event) => {
-			if((event.target.value == "-") && (winner == "-")){
-				event.target.value = player;
+			/* if((event.target.value == "-") && (winner == "-")){
+				event.target.value = "X";
 				event.target.style.color = "#333";
 				bot();
 				winner = victory();
 				completeListOfMatches();
 				console.log(winner);
-			}
+			} */
+			completeGrid(event);
 		});
+	}
+}
+
+//fazer função que receba como parametros o evento
+
+function completeGrid(event) {
+	if(game_mode == "Humano vs Humano"){
+		if((event.target.value == "-") && (winner == "-")){
+			event.target.value = player;
+			event.target.style.color = "#333";
+
+			winner = victory();
+			completeListOfMatches();
+			
+			if(player == "X") {
+				player = "O";
+			}else{
+				player = "X";
+			}
+		}
+	} else if(game_mode == "Humano vs CPU"){
+		if((event.target.value == "-") && (winner == "-")){
+			event.target.value = "O";
+			event.target.style.color = "#333";
+			bot();
+			winner = victory();
+			completeListOfMatches();
+			console.log(winner);
+		}
+	} else if(game_mode == "CPU vs Humano"){
+		if((event.target.value == "-") && (winner == "-")){
+			event.target.value = "X";
+			event.target.style.color = "#333";
+			bot();
+			winner = victory();
+			completeListOfMatches();
+			console.log(winner);
+		}
 	}
 }
 
@@ -85,10 +128,10 @@ function bot(){
 	let randomBox = array[Math.floor(Math.random() * array.length)];
 	console.log(randomBox);
 	if(array.length > 0){
-		if(player == "O"){
+		if(game_mode == "Humano vs CPU"){
 			box[randomBox].value = "X";
 			box[randomBox].style.color = "#333";
-		} else {
+		} else if(game_mode = "CPU vs Humano"){
 			box[randomBox].value = "O";
 			box[randomBox].style.color = "#333";
 		}
@@ -103,8 +146,8 @@ function restart() {
 	}
 	
 	if(game_mode == "CPU vs Humano"){
-		player = "X";
 		game_mode = "CPU vs Humano";
+		bot();
 	} else if(game_mode == "Humano vs CPU"){
 		player = "O";
 		game_mode = "Humano vs CPU";
