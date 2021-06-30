@@ -1,5 +1,13 @@
+:root {
+    --primary-white: #fafafa;
+    --secondary-white: #e0e0e0; 
+    --primary-black: #333;
+    --primary-purple: #9329D9;
+    --secondary-purple: #9329D9;
+}
+
 body {
-    background-color: #e0e0e0;
+    background-color: var(--secondary-white);
     font-family: 'Luckiest Guy', cursive;
     font-size: 1.25rem;
 }
@@ -8,6 +16,7 @@ h1 {
     font-size: 2rem;
     margin: 1.875rem;
     text-align: center;
+    color: var(--primary-black);
 }
 
 .container {
@@ -27,6 +36,7 @@ h1 {
     text-align: center;
     font-size: 1.5rem;
     padding: 0.938rem;
+    color: var(--primary-black);
 }
 
 .option-buttons {
@@ -46,14 +56,14 @@ h1 {
     cursor: pointer;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
-    background:#9329D9;
-    color: #fafafa;
+    background: var(--primary-purple);
+    color: var(--primary-white);
     transition: all 0.3s ease-in-out;
 }
 
 #opt-1:hover, #opt-2:hover, #opt-3:hover {
     transform: scale(0.96);
-    background:#640c9e;
+    background: var(--primary-purple);
 }
 
 .row {
@@ -68,12 +78,12 @@ h1 {
     margin: 0.188rem;
     border-radius: 20px;
     cursor: pointer;
-    background-color: #fafafa;
+    background-color: var(--primary-white);
     font-family: 'Permanent Marker', cursive;
     font-size: 2.5rem;
     text-align: center;
     line-height: 6.25rem;
-    color: #fafafa;
+    color: var(--primary-white);
 }
 
 #restart {
@@ -86,14 +96,14 @@ h1 {
     cursor: pointer;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
-    background:#9329D9;
-    color: #fafafa;
+    background: var(--primary-purple);
+    color: var(--primary-white);
     transition: all 0.3s ease-in-out;
 }
 
 #reiniciar:hover {
     transform: scale(0.96);
-    background:#640c9e;
+    background: var(--secondary-purple);
 }
 
 .list {
@@ -108,10 +118,12 @@ h1 {
     font-size: 1.5rem;
     padding: 0.938rem;
     text-align: center;
+    color: var(--primary-black);
 }
 
 .list th, td {
     font-size: 1rem;
     text-align: center;
     padding: 0.5rem;
+    color: var(--primary-black);
 }
